@@ -65,11 +65,11 @@ export default function Home() {
         {growthExperiments.personaPersonalization && <PersonaSelector />}
         <ProductGrowthLoop />
         <BeforeAfterSection />
+        {growthExperiments.growthAudit && <SocialGrowthAudit />}
         <ProductFeaturesGrid />
         <InsightsSection />
         <SecondaryCapabilities />
         <IntegrationsSection />
-        {growthExperiments.growthAudit && <SocialGrowthAudit />}
         <CustomerStories />
         <HumanSupportSection />
         <ResourcesSection />

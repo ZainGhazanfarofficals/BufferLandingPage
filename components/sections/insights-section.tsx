@@ -14,7 +14,7 @@ export function InsightsSection() {
       <div className="mx-auto max-w-[1160px]">
         <Reveal className="mx-auto max-w-[640px] text-center">
           <span className="rounded-full bg-surface-soft px-3 py-1 text-xs font-medium uppercase tracking-wide text-body-strong">
-            Insights
+            Example insights
           </span>
           <h2 className="mt-3 text-2xl font-medium tracking-tight text-ink sm:text-3xl">
             Know what to create next
@@ -72,6 +72,10 @@ export function InsightsSection() {
             ))}
           </RevealGroup>
         </div>
+
+        <p className="mt-8 text-center text-xs text-muted-text">
+          Example findings shown for illustration — your account&apos;s insights are based on your own data.
+        </p>
 
         <div className="mt-10 flex justify-center">
           <CtaLink

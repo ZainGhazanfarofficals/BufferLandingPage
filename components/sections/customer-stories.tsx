@@ -49,6 +49,9 @@ export function CustomerStories() {
           <h2 className="text-center text-2xl font-medium tracking-tight text-ink sm:text-3xl">
             Built for growing audiences, not vanity metrics
           </h2>
+          <p className="mx-auto mt-2 max-w-[560px] text-center text-xs text-muted-text">
+            Illustrative examples of the outcomes teams report — not verified Buffer customers.
+          </p>
         </Reveal>
 
         <RevealGroup className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-3" stagger={0.1}>
@@ -72,6 +75,10 @@ export function CustomerStories() {
                     aria-hidden="true"
                     strokeWidth={1}
                   />
+
+                  <span className="absolute right-4 top-4 rounded-full bg-surface-soft px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-text">
+                    Example
+                  </span>
 
                   <div className="relative flex flex-col gap-4">
                     <span
@@ -122,7 +129,7 @@ export function CustomerStories() {
 
         <Reveal delay={0.15} className="mt-14 text-center">
           <p className="text-xs font-medium uppercase tracking-wide text-muted-text">
-            From the Buffer creator community
+            Real creators, real Buffer users
           </p>
           <RevealGroup
             className="mx-auto mt-6 flex max-w-[760px] flex-wrap justify-center gap-6"

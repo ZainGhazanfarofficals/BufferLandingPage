@@ -44,7 +44,7 @@ export const productFeatures: ProductFeature[] = [
     eyebrow: "Engage",
     headline: "Never miss the conversations that matter",
     description:
-      "Manage comments, mentions, and messages from every channel in one focused inbox, so the right replies never get buried.",
+      "Manage comments and mentions from every channel in one focused inbox, so the right replies never get buried.",
     href: "/features/social-media-analytics",
     tint: "coral",
     screenshot: {

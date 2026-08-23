@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 
 function AnimatedNumber({ value, className }: { value: number, className?: string }) {
     return (
-        <div className={cn("flex items-center", className)}>
+        <div className={cn("flex items-center", className)} aria-hidden="true">
             <div className="flex relative items-center">
                 {value.toString().split("").map((digit, index) => (
                     <SingleNumberHolder key={index} value={digit} index={index} />

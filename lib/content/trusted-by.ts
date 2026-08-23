@@ -1,4 +1,4 @@
-export const activeUsersLabel = "244,324 creators, brands, and agencies";
+export const activeUsersLabel = "100,000+ creators, brands, and agencies";
 
 export interface TrustedByLogo {
   name: string;

@@ -1,6 +1,5 @@
 import { PlatformTile } from "@/components/ui/platform-tile";
 import { ScheduledPostRow } from "@/components/product-mockups/scheduled-post-row";
-import { WorkflowStepper } from "@/components/product-mockups/workflow-stepper";
 import type { PlatformId } from "@/lib/content/integrations";
 
 const channelRow: PlatformId[] = [
@@ -64,10 +63,6 @@ export function HeroDashboard() {
           {upcomingPosts.map((post) => (
             <ScheduledPostRow key={post.snippet} {...post} />
           ))}
-        </div>
-
-        <div className="mt-5 border-t border-hairline pt-4">
-          <WorkflowStepper />
         </div>
       </div>
     </div>

@@ -225,10 +225,16 @@ export function SocialGrowthAudit() {
                   Your Social Growth Score · {platformName}
                 </p>
                 <div className="flex items-baseline text-5xl font-semibold tracking-tight text-ink">
-                  <AnimatedNumber value={result.opportunityScore} />
-                  <span className="text-xl text-muted-text"> / 100</span>
+                  <span className="sr-only">{result.opportunityScore} out of 100</span>
+                  <span aria-hidden="true" className="flex items-baseline">
+                    <AnimatedNumber value={result.opportunityScore} />
+                    <span className="text-xl text-muted-text"> / 100</span>
+                  </span>
                 </div>
                 <p className="text-sm text-body">{result.engagementTrend}</p>
+                <p className="mt-1 text-xs text-muted-text">
+                  Estimated from your answers, for illustration — not a measurement of your real accounts.
+                </p>
               </div>
 
               <dl className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">

@@ -24,9 +24,16 @@ export function CountUpNumber({
       viewport={{ once: true, margin: "-40px" }}
       className={cn("inline-flex items-baseline", className)}
     >
-      {prefix && <span className="mr-0.5">{prefix}</span>}
-      <AnimatedNumber value={displayValue} />
-      {suffix && <span className="ml-0.5">{suffix}</span>}
+      <span className="sr-only">
+        {prefix}
+        {value}
+        {suffix}
+      </span>
+      <span aria-hidden="true" className="inline-flex items-baseline">
+        {prefix && <span className="mr-0.5">{prefix}</span>}
+        <AnimatedNumber value={displayValue} />
+        {suffix && <span className="ml-0.5">{suffix}</span>}
+      </span>
     </motion.span>
   );
 }
