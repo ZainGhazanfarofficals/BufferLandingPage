@@ -7,7 +7,7 @@ export const heroMessagingCopy: Record<
   outcome: {
     headline: "Grow your audience without living on social media",
     subcopy:
-      "Plan, create, publish, engage, and understand what works across all your social channels from one simple workspace.",
+      "Buffer is a social media management workspace for planning, publishing, and understanding what works across every channel — without the busywork.",
   },
   category: {
     headline: "Social media management, simplified",
@@ -18,7 +18,7 @@ export const heroMessagingCopy: Record<
 
 export const heroCtaCopy: Record<HeroCtaCopyVariant, string> = {
   "start-free": "Start for free",
-  "start-free-no-card": "Start for free",
+  "start-free-no-card": "Start for free — no credit card",
 };
 
 export const heroReassurance = "Free forever · No credit card required · Connect up to 3 channels";

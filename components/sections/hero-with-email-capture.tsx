@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { track } from "@/lib/analytics";
-import { secondaryCtaClass } from "@/lib/cta-styles";
 
 export function HeroWithEmailCapture({ ctaLabel }: { ctaLabel: string }) {
   const router = useRouter();
@@ -48,13 +47,6 @@ export function HeroWithEmailCapture({ ctaLabel }: { ctaLabel: string }) {
       <p className="text-xs text-muted-text">
         This creates your free Buffer account — not a newsletter signup.
       </p>
-      <a
-        href="#product-demo"
-        onClick={() => track("hero_secondary_cta_clicked", { location: "hero" })}
-        className={`${secondaryCtaClass} inline-flex items-center justify-center`}
-      >
-        See how Buffer works
-      </a>
     </div>
   );
 }

@@ -55,3 +55,10 @@ export const productFeatures: ProductFeature[] = [
     },
   },
 ];
+
+// The array above is the original module order (Publish, Create, Engage).
+// This is the customer-journey order (Create, Publish, Engage), matching
+// ProductGrowthLoop directly above this section on the page. Which one
+// renders is controlled by growthExperiments.featurePresentation, so the
+// two orderings can be A/B tested against each other.
+export const journeyOrder = ["create", "publish", "engage"];

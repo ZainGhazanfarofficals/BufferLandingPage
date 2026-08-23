@@ -8,6 +8,7 @@ export type AnalyticsEvent =
   | "product_demo_started"
   | "product_demo_completed"
   | "social_growth_audit_started"
+  | "social_growth_audit_step_completed"
   | "social_growth_audit_completed"
   | "social_growth_audit_cta_clicked"
   | "integration_clicked"

@@ -4,9 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { productFeatures } from "@/lib/content/product-features";
+import { productFeatures, journeyOrder } from "@/lib/content/product-features";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { track } from "@/lib/analytics";
+import { growthExperiments } from "@/lib/experiments";
 import { cn } from "@/lib/utils";
 
 const tintClasses = {
@@ -14,6 +15,11 @@ const tintClasses = {
   green: "bg-[#dcefd1]",
   coral: "bg-pastel-coral",
 } as const;
+
+const orderedFeatures =
+  growthExperiments.featurePresentation === "journey"
+    ? journeyOrder.map((id) => productFeatures.find((f) => f.id === id)!)
+    : productFeatures;
 
 export function ProductFeaturesGrid() {
   return (
@@ -26,13 +32,16 @@ export function ProductFeaturesGrid() {
           <h2 className="mt-3 text-2xl font-medium tracking-tight text-ink sm:text-3xl">
             Everything you need to grow, in one place
           </h2>
+          <p className="mt-2 text-sm text-muted-text">
+            Here&apos;s how each step of that loop actually works.
+          </p>
         </Reveal>
 
         <RevealGroup
           className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3"
           stagger={0.1}
         >
-          {productFeatures.map((feature) => (
+          {orderedFeatures.map((feature) => (
             <RevealItem key={feature.id} className="h-full">
               <motion.article
                 id={feature.id}

@@ -70,6 +70,7 @@ export function IntegrationsSection() {
                 <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.15 }} className="h-full">
                   <Link
                     href={link.href}
+                    prefetch={false}
                     onClick={() =>
                       track("integration_clicked", {
                         location: "integrations-section",

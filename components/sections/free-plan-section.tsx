@@ -4,13 +4,22 @@ import { Check, CreditCard, Infinity, Zap } from "lucide-react";
 import { motion } from "motion/react";
 import { CtaLink } from "@/components/analytics/cta-link";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
+import { growthExperiments } from "@/lib/experiments";
 
-const freePlanFeatures = [
-  "Up to 3 channels",
-  "Core publishing tools",
-  "No credit card required",
-  "Upgrade when you need more",
-];
+const freePlanFeatures =
+  growthExperiments.freePlanDisclosure === "explicit-3-channels"
+    ? [
+        "Up to 3 channels",
+        "Core publishing tools",
+        "No credit card required",
+        "Upgrade when you need more",
+      ]
+    : [
+        "Everything you need to get started",
+        "Core publishing tools",
+        "No credit card required",
+        "Upgrade when you need more",
+      ];
 
 const reassurances = [
   { icon: CreditCard, text: "No credit card required to start" },

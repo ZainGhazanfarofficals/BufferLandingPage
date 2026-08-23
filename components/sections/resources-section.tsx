@@ -44,6 +44,7 @@ export function ResourcesSection() {
               <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.15 }} className="h-full">
                 <Link
                   href={resource.href}
+                  prefetch={false}
                   onClick={() =>
                     track("resource_card_clicked", {
                       location: "resources-section",

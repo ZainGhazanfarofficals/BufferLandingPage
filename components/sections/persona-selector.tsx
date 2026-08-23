@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Check, ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { usePersona } from "@/lib/persona-context";
@@ -7,6 +8,7 @@ import { personas } from "@/lib/content/personas";
 import { personaIcons, personaAccentClasses } from "@/lib/persona-style";
 import { getTestimonialForPersona } from "@/lib/content/testimonials";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
+import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 export function PersonaSelector() {
@@ -107,13 +109,38 @@ export function PersonaSelector() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 rounded-2xl border border-hairline bg-canvas-warm p-5 text-center"
+              className="mt-6 grid grid-cols-1 items-center gap-6 rounded-2xl border border-hairline bg-canvas-warm p-6 sm:grid-cols-2 sm:p-8"
               role="status"
             >
-              <p className="text-sm text-body-strong">{active.proofPoint}</p>
-              <p className="mt-1 text-xs text-muted-text">
-                &ldquo;{testimonial.quote.slice(0, 90)}…&rdquo; — {testimonial.name}
-              </p>
+              <div className="overflow-hidden rounded-xl border border-hairline bg-surface-card shadow-[0_1px_2px_rgba(33,49,48,0.04)]">
+                <Image
+                  src={active.spotlightImage.src}
+                  alt={active.spotlightImage.alt}
+                  width={active.spotlightImage.width}
+                  height={active.spotlightImage.height}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+
+              <div className="flex flex-col items-start gap-3 text-left">
+                <p className="text-sm font-medium text-body-strong">{active.proofPoint}</p>
+                <p className="text-xs text-muted-text">
+                  &ldquo;{testimonial.quote.slice(0, 90)}…&rdquo; — {testimonial.name}
+                </p>
+                <a
+                  href={`#${active.scrollTarget}`}
+                  onClick={() =>
+                    track("integration_clicked", {
+                      location: "persona-selector",
+                      ctaVariant: active.id,
+                    })
+                  }
+                  className="mt-1 inline-flex items-center gap-1 text-sm font-medium text-ink underline underline-offset-4 hover:no-underline"
+                >
+                  {active.ctaLabel}
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </a>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

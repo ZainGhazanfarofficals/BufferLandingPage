@@ -75,13 +75,13 @@ export function InsightsSection() {
 
         <div className="mt-10 flex justify-center">
           <CtaLink
-            href="/signup"
-            event="final_cta_clicked"
+            href="/features/social-media-analytics"
+            event="integration_clicked"
             location="insights-section"
             ctaVariant="see-whats-working"
-            className="h-12 rounded-full bg-ink px-6 text-[15px] font-medium text-canvas hover:bg-ink/90"
+            className="text-sm font-medium text-ink underline underline-offset-4 hover:no-underline"
           >
-            See what is working →
+            See a full analytics walkthrough →
           </CtaLink>
         </div>
       </div>
